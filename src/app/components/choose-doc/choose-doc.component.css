@@ -1,0 +1,12 @@
+.container {
+  margin: 0 auto;
+  min-width: 260px;
+  max-width: 360px;
+}
+
+.choose-doc-p {
+    text-align: center;
+    letter-spacing: 0.4px;
+    font-size: 20px;
+    font-weight: bold;
+}

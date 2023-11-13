@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container::slotted {
+  border: 1px solid black;
+}
+
+.border-div {
+  border: 1px solid grey;
+  margin-top: 8px;
+  border-radius: 9px;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-label-right {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2px 6px;
+}
+
+.apply {
+  background-color: green;
+}
