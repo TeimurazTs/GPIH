@@ -29,11 +29,11 @@
     </fieldset>
     <fieldset class="fieldset-flex">
       <legend>პირადი ექიმი</legend>
-      <input class="input-none" type="text" />
-      <select class="small">
+      <input class="input-none" type="text" [formControl]="personalDoctorFormControl"/>
+      <select class="small" #selectData3 (change)="inputData3(selectData3)" >
         <option value=""></option>
         <option value="მარიამ ქრისტესაშვილი">მარიამ ქრისტესაშვილი</option>
-        <option value="გიორგი თვალაძე ">გიორგი თვალაძე</option>
+        <option value="გიორგი თვალაძე">გიორგი თვალაძე</option>
       </select>
     </fieldset>
     <fieldset class="fieldset-flex">
@@ -51,7 +51,9 @@
       <select #selectData2 (change)="inputData2(selectData2)" class="small">
         <option value=""></option>
         <option value="ლანა ხორგუანი">ლანა ხორგუანი</option>
+        <option value="გიორგი კალანდაძე">გიორგი კალანდაძე</option>
         <option value="იაგო აბზიანიძე">იაგო აბზიანიძე</option>
+        <option value="ნინო აბუთიძე">ნინო აბუთიძე</option>
       </select>
     </fieldset>
   </div>

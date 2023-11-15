@@ -14,6 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  flex-wrap: wrap;
 }
 .week-days div {
   display: flex;
@@ -56,6 +58,7 @@
 
 .doctors {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -79,6 +82,8 @@
   background-color: #f3f6f9;
   border-radius: 9px;
   margin-bottom: 20px;
+
+  flex-wrap: wrap;
 }
 
 .calendar-day-month {
@@ -105,10 +110,10 @@
   outline: none;
 }
 
-.clinic {
+/* .clinic {
   max-width: 256px;
   width: 256px;
-}
+} */
 
 .clinic select {
   border: none;
@@ -165,4 +170,10 @@ fieldset legend {
   border-radius: 9px;
   padding: 2px 5px;
   margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .container-form-day, .doctors{
+    justify-content: center;
+  }
+
 }

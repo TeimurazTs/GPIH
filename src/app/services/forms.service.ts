@@ -1,10 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import {
-  Form,
   FormControl,
   FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
 } from '@angular/forms';
 
 @Injectable({
@@ -33,6 +30,7 @@ export class FormsService {
       policed: new FormControl(''),
     });
     this.doctorFormGroup = new FormGroup({
+      personalDoctor: new FormControl(''),
       doctor: new FormControl(''),
       specialty: new FormControl(''),
       time: new FormControl(''),
