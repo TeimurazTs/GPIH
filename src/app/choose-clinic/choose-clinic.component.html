@@ -1,4 +1,4 @@
-<div class="container">
+<form [formGroup]="clinicFormGroup" class="container">
   <p class="clinic-p">აირჩიე კლინიკა</p>
   <fieldset class="margin-bottom-sm">
     <legend>აირჩიე ქალაქი</legend>
@@ -21,7 +21,7 @@
         <p class="desc-p">ოთარ ლორთქიფანიძის #31</p>
       </div>
     </div>
-    <app-input name="group1" [applyClass]="true"></app-input>
+    <app-input [formControlInput]="clinicFormControl" value="კურაციო, ოთარ ლორთქიფანიძის #31" name="group1" [applyClass]="true"></app-input>
   </div>
   <div class="flex">
     <div class="inner-flex">
@@ -34,7 +34,8 @@
       </div>
     </div>
 
-    <app-input name="group1" [applyClass]="true"></app-input>
+    <app-input [formControlInput]="clinicFormControl" value="ინგოროყვას საუნივერსიტეტო კლინიკა, წინანდალის ნომერი 9" name="group1"
+      [applyClass]="true"></app-input>
   </div>
   <div class="flex">
     <div class="inner-flex">
@@ -47,6 +48,6 @@
       </div>
     </div>
 
-    <app-input name="group1" [applyClass]="true"></app-input>
+    <app-input [formControlInput]="clinicFormControl" value="ევექსის ჰოსპიტალები, ოთარ ლორთქიფანიძის #31" name="group1" [applyClass]="true"></app-input>
   </div>
-</div>
+</form>

@@ -1,24 +1,15 @@
-<div class="container">
+<form [formGroup]="doctorFormGroup" class="container">
   <p class="calendar-text">აირჩიე სასურველი დრო</p>
   <div class="container-form-day">
     <p class="calendar-day-month">
       {{ todayWithMonth }}
     </p>
     <div class="container-with-arrows">
-      <button
-        class="btn"
-        (click)="onPrevious()"
-        [disabled]="weekDates[0] < currentDate"
-      >
+      <button class="btn" (click)="onPrevious()" [disabled]="weekDates[0] < currentDate">
         &#60;
       </button>
       <div class="week-days">
-        <div
-          *ngFor="let date of weekDates"
-          (click)="setActiveDate(date)"
-          [class.active]="isDateActive(date)"
-          (click)="onDateClicked(date)"
-        >
+        <div *ngFor="let date of weekDates" (click)="setActiveDate(date)" [class.active]="isDateActive(date)">
           <div class="day-name">{{ date | date : "EEEE" }}</div>
           <div class="day-date">{{ date | date : "d MMM" }}</div>
         </div>
@@ -33,7 +24,7 @@
       <select class="small">
         <option value=""></option>
         <option value="სს კურაციო">სს კურაციო</option>
-        <option value="სს კურაციო">სს კურაციო</option>
+        <option value="სს კურაციო">ინგოროყვას კლინიკა</option>
       </select>
     </fieldset>
     <fieldset class="fieldset-flex">
@@ -47,8 +38,8 @@
     </fieldset>
     <fieldset class="fieldset-flex">
       <legend>სპეციალობა</legend>
-      <input class="input-none" type="text" />
-      <select class="small">
+      <input ngDefaultControl [formControl]="specialtyFormcontrol" class="input-none" type="text" />
+      <select #selectData (change)="inputData(selectData)" class="small">
         <option value=""></option>
         <option value="ოტორინოლარინგოლოგი">ოტორინოლარინგოლოგი</option>
         <option value="ოფთალმოლოგი">ოფთალმოლოგი</option>
@@ -56,8 +47,8 @@
     </fieldset>
     <fieldset class="fieldset-flex">
       <legend>ექიმი</legend>
-      <input class="input-none" type="text" />
-      <select class="small">
+      <input ngDefaultControl [formControl]="doctorFormControl" class="input-none" type="text" />
+      <select #selectData2 (change)="inputData2(selectData2)" class="small">
         <option value=""></option>
         <option value="ლანა ხორგუანი">ლანა ხორგუანი</option>
         <option value="იაგო აბზიანიძე">იაგო აბზიანიძე</option>
@@ -69,10 +60,8 @@
 
   <div class="doctor-box margin-top">
     <div class="photo-clinic">
-      <img
-        style="width: 42px; height: 42px"
-        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
+      <!-- <img style="width: 42px; height: 42px"
+        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /> -->
       <div>
         <div class="doctor-info">
           <p class="doctor-name">{{ doctor.name }}</p>
@@ -83,9 +72,9 @@
     </div>
     <div class="time-div">
       @for(each of doctor.time; track each) {
-      <p class="each-time">{{ each }}</p>
+      <p #paragraph (click)="clickedOnTime(each, paragraph)" class="each-time">{{ each }}</p>
       }
     </div>
   </div>
   }
-</div>
+</form>

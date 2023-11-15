@@ -31,9 +31,10 @@ export class ClientDoctorComponent implements OnInit {
 
   ngOnInit(): void {
     this.userFormControl = this.clientFormGroup.get('policed') as FormControl;
-    this.userFormControl.valueChanges.subscribe((data) => {
-      console.log(data);
+    this.userFormControl.valueChanges.subscribe(() => {
+      console.log(5);
     });
+    console.log(this.userFormControl);
   }
 
   toggleForMe = true;
@@ -48,9 +49,5 @@ export class ClientDoctorComponent implements OnInit {
       this.toggleForMe = false;
       this.toggleForSomeone = true;
     }
-  }
-
-  submit() {
-    console.log(5);
   }
 }

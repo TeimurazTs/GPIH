@@ -1,22 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule, NgSwitch } from '@angular/common';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsService } from '../../services/forms.service';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.css',
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
   todayWithMonth: string = 'დღეს - 15 ნოე';
+
+  doctorFormGroup!: FormGroup;
+
+  doctorFormControl!: FormControl;
+  specialtyFormcontrol!: FormControl;
+  timeFormControl!: FormControl;
 
   currentDate = new Date();
   weekDates: Date[] = [];
+
+  inputData(data: any) {
+    this.specialtyFormcontrol.setValue(data.value);
+  }
+
+  inputData2(data: any) {
+    this.doctorFormControl.setValue(data.value);
+  }
+
   constructor(private forms: FormsService) {
     this.loadWeek(this.currentDate);
   }
+  ngOnInit(): void {
+    this.doctorFormGroup = this.forms.myDoctorFormGroup;
+    this.doctorFormControl = this.doctorFormGroup.get('doctor') as FormControl;
+    this.specialtyFormcontrol = this.doctorFormGroup.get(
+      'specialty'
+    ) as FormControl;
+    this.timeFormControl = this.doctorFormGroup.get('time') as FormControl;
+    this.doctorFormControl.valueChanges.subscribe((data) => {
+      console.log(data);
+    });
+    this.specialtyFormcontrol.valueChanges.subscribe((data) => {
+      console.log(data);
+    });
+    this.timeFormControl.valueChanges.subscribe((data) => {
+      console.log(data);
+    });
+  }
+
   loadWeek(date: Date) {
     this.weekDates = [];
     for (let i = 0; i < 7; i++) {
@@ -53,8 +87,9 @@ export class CalendarComponent {
     return this.activeDate?.getTime() === date.getTime();
   }
 
-  onDateClicked(clickedDate: Date) {
-    console.log(clickedDate);
+  clickedOnTime(data: string, element: any) {
+    this.timeFormControl.setValue(data);
+    element.clas
   }
 
   doctors: any[] = [
