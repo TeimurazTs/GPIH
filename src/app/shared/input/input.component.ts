@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -16,4 +17,5 @@ export class InputComponent {
   @Input() label2: string | undefined;
   @Input() label3: string | undefined;
   @Input() applyClass: boolean = false;
+  @Input() formControl = new FormControl();
 }

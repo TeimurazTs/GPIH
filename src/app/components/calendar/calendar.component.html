@@ -1,56 +1,65 @@
 <div class="container">
-  <div class="container-with-arrows">
-    <button (click)="onPrevious()" [disabled]="weekDates[0] < currentDate">
-      Previous
-    </button>
-    <div class="week-days">
-      <div *ngFor="let date of weekDates" (click)="setActiveDate(date)" [class.active]="isDateActive(date)"
-        (click)="onDateClicked(date)">
-        <div class="day-name">{{ date | date: 'EEEE' }}</div>
-        <div class="day-date">{{ date | date: 'd MMM' }}</div>
+  <p class="calendar-text">აირჩიე სასურველი დრო</p>
+  <div class="container-form-day">
+    <p class="calendar-day-month">
+      {{ todayWithMonth }}</p>
+    <div class="container-with-arrows">
+      <button (click)="onPrevious()" [disabled]="weekDates[0] < currentDate">
+        &#60;
+      </button>
+      <div class="week-days">
+        <div *ngFor="let date of weekDates" (click)="setActiveDate(date)" [class.active]="isDateActive(date)"
+          (click)="onDateClicked(date)">
+          <div class="day-name">{{ date | date: 'EEEE' }}</div>
+          <div class="day-date">{{ date | date: 'd MMM' }}</div>
+        </div>
       </div>
+      <button (click)="onNext()">&#62;
+      </button>
     </div>
-    <button (click)="onNext()">Next</button>
   </div>
   <div class="doctors">
-    <fieldset>
+    <fieldset class="fieldset-flex clinic">
       <legend>კლინიკა</legend>
       <select>
         <option value="სს კურაციო">სს კურაციო</option>
       </select>
     </fieldset>
-    <fieldset>
+    <fieldset class="fieldset-flex">
       <legend>პირადი ექიმი</legend>
-      <input type="text">
-      <select>
+      <input class="input-none" type="text">
+      <select class="small">
         <option value=""></option>
         <option value="მარიამ ქრისტესაშვილი">მარიამ ქრისტესაშვილი</option>
         <option value="გიორგი თვალაძე ">გიორგი თვალაძე</option>
       </select>
     </fieldset>
-    <fieldset>
+    <fieldset class="fieldset-flex">
       <legend>სპეციალობა</legend>
-      <input type="text">
-      <select>
+      <input class="input-none" type="text">
+      <select class="small">
         <option value=""></option>
         <option value="ოტორინოლარინგოლოგი">ოტორინოლარინგოლოგი</option>
         <option value="ოფთალმოლოგი">ოფთალმოლოგი</option>
       </select>
     </fieldset>
-    <fieldset>
+    <fieldset class="fieldset-flex">
       <legend>ექიმი</legend>
-      <input type="text">
-      <select>
+      <input class="input-none" type="text">
+      <select class="small">
         <option value=""></option>
         <option value="ლანა ხორგუანი">ლანა ხორგუანი</option>
         <option value="იაგო აბზიანიძე">იაგო აბზიანიძე</option>
       </select>
     </fieldset>
   </div>
+  <p class="margin-top">სპეციალისტები</p>
   @for (doctor of doctors; track doctor.id) {
 
-  <div class="doctor-box">
-    <img src="">
+  <div class="doctor-box margin-top">
+    <div class="photo-clinic">
+      <img style="width: 42px; height: 42px;"
+      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
     <div>
       <div>
         <p>{{ doctor.name }}</p>
@@ -58,11 +67,12 @@
       </div>
       <p>{{doctor.description}}</p>
     </div>
-  </div>
-  <div>
-    @for(each of doctor.time; track each) {
-    <p>{{each}}</p>
-    }
+    </div>
+    <div class="time-div">
+      @for(each of doctor.time; track each) {
+      <p>{{each}}</p>
+      }
+    </div>
   </div>
   }
 </div>
