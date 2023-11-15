@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgSwitch } from '@angular/common';
+import { FormsService } from '../../services/forms.service';
 
 @Component({
   selector: 'app-calendar',
@@ -13,7 +14,7 @@ export class CalendarComponent {
 
   currentDate = new Date();
   weekDates: Date[] = [];
-  constructor() {
+  constructor(private forms: FormsService) {
     this.loadWeek(this.currentDate);
   }
   loadWeek(date: Date) {

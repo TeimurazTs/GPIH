@@ -1,50 +1,26 @@
 <div class="container">
   <p class="client-p">ვისი ჩაწერა გსურს?</p>
-  <form>
+  <form [formGroup]="clientFormGroup" (ngSubmit)="submit()">
     <div class="flex">
       <div class="width-150">
-        <mat-radio-button
-          (click)="changePerson('ჩემთვის')"
-          id
-          ariaPlaceholder="ჩემთვის"
-          aria-label="ჩემთვის"
-          name="group1"
-          value="ჩემთვის"
-          >ჩემთვის</mat-radio-button
-        >
+        <mat-radio-button (click)="changePerson('ჩემთვის')" id ariaPlaceholder="ჩემთვის" aria-label="ჩემთვის"
+          name="group1" value="ჩემთვის">ჩემთვის</mat-radio-button>
       </div>
       <div class="width-150">
-        <mat-radio-button
-          (click)="changePerson('სხვისთვის')"
-          id
-          aria-label="სხვისთვის"
-          name="group1"
-          value="სხვისთვის"
-          >სხვისთვის</mat-radio-button
-        >
+        <mat-radio-button (click)="changePerson('სხვისთვის')" id aria-label="სხვისთვის" name="group1"
+          value="სხვისთვის">სხვისთვის</mat-radio-button>
       </div>
     </div>
     @if (toggleForMe) {
-    <input
-      class="ordinary-input"
-      type="text"
-      placeholder="მიუთითე პოლისის ნომერი"
-    />
+    <input class="ordinary-input" type="text" placeholder="მიუთითე პოლისის ნომერი" />
     <div class="flex">
       <p class="choose-p">ან აირჩიე სიიდან</p>
       <div class="hr-div"></div>
     </div>
     <p class="choose-bold">აირჩიე ვისი ჩაწერა გსურს</p>
-    <app-input
-      label2="OPPMED123512321"
-      label="გიორგი ახვლედიანი"
-      name="group2"
-    ></app-input>
-    <app-input
-      label2="OPPMED123512321"
-      label="გიორგი ახვლედიანი"
-      name="group2"
-    ></app-input>
+    <app-input value="გიორგი წერეთლი" label2="OPPMED123512321" label="გიორგი წერეთელი" name="group2"
+      [formControlInput]="userFormControl"></app-input>
+    <app-input label2="OPPMED123512321" label="გიორგი ახვლედიანი" name="group2"></app-input>
     } @if(toggleForSomeone) {
     <form>
       <p class="title">მიუთითე დაზღვეულის მონაცემები</p>
@@ -57,21 +33,9 @@
         <input class="fieldset-input" type="text" />
       </fieldset>
       <p class="title">აირჩიე ვისი ჩაწერა გსურს</p>
-      <app-input
-        label2="OPPMED123512321"
-        label="გიორგი ლომიძე"
-        name="group3"
-      ></app-input>
-      <app-input
-        label2="OPPMED123512321"
-        label="გიორგი ბერაძე"
-        name="group3"
-      ></app-input>
-      <app-input
-        label2="OPPMED123512321"
-        label="გიორგი კალანდაძე"
-        name="group3"
-      ></app-input>
+      <app-input label2="OPPMED123512321" label="გიორგი ლომიძე" name="group3"></app-input>
+      <app-input label2="OPPMED123512321" label="გიორგი ბერაძე" name="group3"></app-input>
+      <app-input label2="OPPMED123512321" label="გიორგი კალანდაძე" name="group3"></app-input>
     </form>
     }
   </form>
