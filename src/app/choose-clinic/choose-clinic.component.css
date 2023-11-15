@@ -14,6 +14,7 @@
 .select-div {
   width: 100%;
   border: none;
+  outline: none;
 }
 
 .clinic-p-2 {
@@ -22,13 +23,15 @@
 
 .margin-bottom-sm {
   margin-bottom: 12px;
+  border-radius: 9px;
 }
 
 .input-text {
   width: 100%;
-  border: 1px solid grey;
+  border: none;
+  background-color: #e5e4e2;
   border-radius: 9px;
-  padding: 2px 6px;
+  padding: 10px 20px;
 }
 
 .flex {
@@ -39,4 +42,26 @@
   margin-top: 16px;
   border-radius: 11px;
   padding: 6px 12px;
+}
+/* kala made changes here */
+legend {
+  opacity: 0.7;
+}
+.choose-clinic {
+  font-weight: 600;
+}
+.inner-flex {
+  display: flex;
+  gap: 15px;
+}
+.icon-div {
+  align-self: center;
+}
+.title-p {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.desc-p {
+  color: #818589;
+  margin-bottom: 3px;
 }

@@ -10,7 +10,8 @@
           aria-label="ჩემთვის"
           name="group1"
           value="ჩემთვის"
-        >ჩემთვის</mat-radio-button>
+          >ჩემთვის</mat-radio-button
+        >
       </div>
       <div class="width-150">
         <mat-radio-button
@@ -19,7 +20,8 @@
           aria-label="სხვისთვის"
           name="group1"
           value="სხვისთვის"
-        >სხვისთვის</mat-radio-button>
+          >სხვისთვის</mat-radio-button
+        >
       </div>
     </div>
     @if (toggleForMe) {
@@ -45,16 +47,16 @@
     ></app-input>
     } @if(toggleForSomeone) {
     <form>
-      <p>მიუთითე დაზღვეულის მონაცემები</p>
+      <p class="title">მიუთითე დაზღვეულის მონაცემები</p>
       <fieldset>
         <legend>პირადი ან პოლისის ნომერი</legend>
-        <input type="text" />
+        <input class="fieldset-input" type="text" />
       </fieldset>
       <fieldset>
         <legend>დაბადების თარიღი</legend>
-        <input type="text" />
+        <input class="fieldset-input" type="text" />
       </fieldset>
-      <p>აირჩიე ვისი ჩაწერა გსურს</p>
+      <p class="title">აირჩიე ვისი ჩაწერა გსურს</p>
       <app-input
         label2="OPPMED123512321"
         label="გიორგი ლომიძე"
