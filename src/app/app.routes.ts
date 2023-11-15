@@ -2,24 +2,33 @@ import { Routes } from '@angular/router';
 import { ClientDoctorComponent } from './components/client-doctor/client-doctor.component';
 import { ConsultationTypeComponent } from './components/consultation-type/consultation-type.component';
 import { ChooseDocComponent } from './components/choose-doc/choose-doc.component';
+import { ChooseClinicComponent } from './choose-clinic/choose-clinic.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { SumupComponent } from './components/sumup/sumup.component';
 
 export const routes: Routes = [
   {
-    path: 'client',
+    path: '',
     component: ClientDoctorComponent,
-    outlet: 'client',
-    pathMatch: 'full',
   },
   {
     path: 'consultation',
     component: ConsultationTypeComponent,
-    outlet: 'consultation',
-    pathMatch: 'full',
   },
   {
     path: 'doctor',
     component: ChooseDocComponent,
-    outlet: 'doctor',
-    pathMatch: 'full',
+  },
+  {
+    path: 'clinic',
+    component: ChooseClinicComponent,
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
+  },
+  {
+    path: 'sumup',
+    component: SumupComponent,
   },
 ];

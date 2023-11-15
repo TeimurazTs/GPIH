@@ -19,6 +19,8 @@
 
 .width-150 {
     width: 150px;
+    border: 1px solid grey;
+    border-radius: 9px;
 }
 /* style="margin-top: 8px; width: 100%; padding: 4px 12px;" */
 .ordinary-input {

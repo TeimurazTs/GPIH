@@ -23,7 +23,9 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     ClientDoctorComponent,
     ConsultationTypeComponent,
-    RouterModule
+    RouterModule,
   ],
 })
-export class RegisterComponent {}
+export class RegisterComponent {
+  doNothing() {}
+}

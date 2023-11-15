@@ -1,1 +1,35 @@
-<p>choose-clinic works!</p>
+<div class="container">
+  <p class="clinic-p">აირჩიე კლინიკა</p>
+  <fieldset class="margin-bottom-sm">
+    <legend>აირჩიე ქალაქი</legend>
+    <select class="select-div" name="cars" id="cars">
+      <option value="თბილისი">თბილისი</option>
+      <option value="ქუთაისი">ქუთაისი</option>
+      <option value="ბათუმი">ბათუმი</option>
+      <option value="ზუგდიდი">ზუგდიდი</option>
+    </select>
+  </fieldset>
+  <p>აირჩიე სასურველი კლინიკა</p>
+  <input class="input-text" type="text" placeholder="კლინიკის ძიება" />
+  <div class="flex">
+    <div>
+      <p>კურაციო</p>
+      <p>ოთარ ლორთქიფანიძის #31</p>
+    </div>
+    <app-input name="group1" [applyClass]="true"></app-input>
+  </div>
+  <div class="flex">
+    <div>
+      <p>ინგოროყვას საუნივერსიტეტო კლინიკა</p>
+      <p>წინანდალის ნომერი 9</p>
+    </div>
+    <app-input name="group1" [applyClass]="true"></app-input>
+  </div>
+  <div class="flex">
+    <div>
+      <p>ევექსის ჰოსპიტალები</p>
+      <p></p>
+    </div>
+    <app-input name="group1" [applyClass]="true">ოთარ ლორთქიფანიძის #31</app-input>
+  </div>
+</div>

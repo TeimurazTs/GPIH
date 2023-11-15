@@ -1,6 +1,6 @@
 .container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .container::slotted {
@@ -14,8 +14,8 @@
 }
 
 .labels {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .radio-label-right {
@@ -26,5 +26,5 @@
 }
 
 .apply {
-  background-color: green;
+  border: none;
 }

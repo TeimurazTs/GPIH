@@ -2,16 +2,75 @@
   <p class="client-p">ვისი ჩაწერა გსურს?</p>
   <form>
     <div class="flex">
-      <app-input class="width-150" name="group1" label="ჩემთვის"></app-input>
-      <app-input class="width-150" name="group1" label="სხვისთვის"></app-input>
+      <div class="width-150">
+        <mat-radio-button
+          (click)="changePerson('ჩემთვის')"
+          id
+          ariaPlaceholder="ჩემთვის"
+          aria-label="ჩემთვის"
+          name="group1"
+          value="ჩემთვის"
+        >ჩემთვის</mat-radio-button>
+      </div>
+      <div class="width-150">
+        <mat-radio-button
+          (click)="changePerson('სხვისთვის')"
+          id
+          aria-label="სხვისთვის"
+          name="group1"
+          value="სხვისთვის"
+        >სხვისთვის</mat-radio-button>
+      </div>
     </div>
-    <input class="ordinary-input" placeholder="მიუთითე პოლისის ნომერი" type="text" />
+    @if (toggleForMe) {
+    <input
+      class="ordinary-input"
+      type="text"
+      placeholder="მიუთითე პოლისის ნომერი"
+    />
     <div class="flex">
       <p class="choose-p">ან აირჩიე სიიდან</p>
       <div class="hr-div"></div>
     </div>
     <p class="choose-bold">აირჩიე ვისი ჩაწერა გსურს</p>
-    <app-input label2="OPPMED123512321" label="გიორგი ახვლედიანი" name="group2"></app-input>
-    <app-input label2="OPPMED123512321" label="გიორგი ახვლედიანი" name="group2"></app-input>
+    <app-input
+      label2="OPPMED123512321"
+      label="გიორგი ახვლედიანი"
+      name="group2"
+    ></app-input>
+    <app-input
+      label2="OPPMED123512321"
+      label="გიორგი ახვლედიანი"
+      name="group2"
+    ></app-input>
+    } @if(toggleForSomeone) {
+    <form>
+      <p>მიუთითე დაზღვეულის მონაცემები</p>
+      <fieldset>
+        <legend>პირადი ან პოლისის ნომერი</legend>
+        <input type="text" />
+      </fieldset>
+      <fieldset>
+        <legend>დაბადების თარიღი</legend>
+        <input type="text" />
+      </fieldset>
+      <p>აირჩიე ვისი ჩაწერა გსურს</p>
+      <app-input
+        label2="OPPMED123512321"
+        label="გიორგი ლომიძე"
+        name="group3"
+      ></app-input>
+      <app-input
+        label2="OPPMED123512321"
+        label="გიორგი ბერაძე"
+        name="group3"
+      ></app-input>
+      <app-input
+        label2="OPPMED123512321"
+        label="გიორგი კალანდაძე"
+        name="group3"
+      ></app-input>
+    </form>
+    }
   </form>
 </div>

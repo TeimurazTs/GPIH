@@ -1,4 +1,4 @@
-<div class="border-div container">
+<div class="border-div container" [ngClass]="{ 'apply': applyClass }" >
   @if (label3) {
   <div class="radio-label-right">
     <label for="radio-input">{{ label3 }}</label>
@@ -9,7 +9,6 @@
     [ariaPlaceholder]="placeholder"
     [name]="name"
     [aria-label]="label"
-    [ngClass]="{ 'apply': applyClass }"
   ></mat-radio-button>
   <div class="labels">
     <label for="radio-input">{{ label }}</label>
