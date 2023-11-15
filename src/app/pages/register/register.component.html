@@ -1,37 +1,40 @@
-<mat-stepper [animationDuration]="'0'">
-  <mat-step routerLink="/">
-    <div>
-      <button routerLink="/consultation" class="class-right" mat-button matStepperNext>Next</button>
-    </div>
-  </mat-step>
-  <mat-step routerLink="/consultation">
-    <div>
-      <button routerLink="/" class="class-left" mat-button matStepperPrevious>Back</button>
-      <button routerLink="/doctor" class="class-right" mat-button matStepperNext>Next</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <div>
-      <button routerLink="/consultation" class="class-left" mat-button matStepperPrevious>Back</button>
-      <button routerLink="/clinic" class="class-right" mat-button matStepperNext>Next</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <div>
-      <button routerLink="/doctor" class="class-left" mat-button matStepperPrevious>Back</button>
-      <button routerLink="/calendar" class="class-right" mat-button matStepperNext>Next</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <div>
-      <button routerLink="/doctor" class="class-left" mat-button matStepperPrevious>Back</button>
-      <button routerLink="/sumup" class="class-right" mat-button matStepperNext>Next</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <div>
-      <button routerLink="/calendar" class="class-left" mat-button matStepperPrevious>Back</button>
-    </div>
-  </mat-step>
-</mat-stepper>
-<router-outlet></router-outlet>
+
+<div class="position-relative">
+  <mat-stepper [animationDuration]="'0'">
+    <mat-step routerLink="/">
+      <div>
+        <button routerLink="/consultation" class="class-right" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step routerLink="/consultation">
+      <div>
+        <button routerLink="/" class="class-left" mat-button matStepperPrevious>Back</button>
+        <button routerLink="/doctor" class="class-right" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <div>
+        <button routerLink="/consultation" class="class-left" mat-button matStepperPrevious>Back</button>
+        <button routerLink="/clinic" class="class-right" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <div>
+        <button routerLink="/doctor" class="class-left" mat-button matStepperPrevious>Back</button>
+        <button routerLink="/calendar" class="class-right" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <div>
+        <button routerLink="/doctor" class="class-left" mat-button matStepperPrevious>Back</button>
+        <button routerLink="/sumup" class="class-right" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <div>
+        <button routerLink="/calendar" class="class-left" mat-button matStepperPrevious>Back</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  <router-outlet></router-outlet>
+</div>

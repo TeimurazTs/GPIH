@@ -8,16 +8,20 @@
 
 .class-left {
   position: absolute;
-  bottom: 0px;
+  bottom: -100px;
   left: 40%;
 }
 
 .class-right {
   position: absolute;
-  bottom: 0px;
+  bottom: -100px;
   right: 40%;
 }
 
 ::ng-deep .mat-horizontal-stepper-header {
   pointer-events: none;
+}
+
+.position-relative {
+  position: relative;
 }
