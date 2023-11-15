@@ -9,27 +9,44 @@
       <option value="ზუგდიდი">ზუგდიდი</option>
     </select>
   </fieldset>
-  <p>აირჩიე სასურველი კლინიკა</p>
+  <p class="choose-clinic">აირჩიე სასურველი კლინიკა</p>
   <input class="input-text" type="text" placeholder="კლინიკის ძიება" />
   <div class="flex">
-    <div>
-      <p>კურაციო</p>
-      <p>ოთარ ლორთქიფანიძის #31</p>
+    <div class="inner-flex">
+      <div class="icon-div">
+        <i class="fa fa-car" style="font-size: 16px"></i>
+      </div>
+      <div>
+        <p class="title-p">კურაციო</p>
+        <p class="desc-p">ოთარ ლორთქიფანიძის #31</p>
+      </div>
     </div>
     <app-input name="group1" [applyClass]="true"></app-input>
   </div>
   <div class="flex">
-    <div>
-      <p>ინგოროყვას საუნივერსიტეტო კლინიკა</p>
-      <p>წინანდალის ნომერი 9</p>
+    <div class="inner-flex">
+      <div class="icon-div">
+        <i class="fa fa-car" style="font-size: 16px"></i>
+      </div>
+      <div>
+        <p class="title-p">ინგოროყვას საუნივერსიტეტო კლინიკა</p>
+        <p class="desc-p">წინანდალის ნომერი 9</p>
+      </div>
     </div>
+
     <app-input name="group1" [applyClass]="true"></app-input>
   </div>
   <div class="flex">
-    <div>
-      <p>ევექსის ჰოსპიტალები</p>
-      <p></p>
+    <div class="inner-flex">
+      <div class="icon-div">
+        <i class="fa fa-car" style="font-size: 16px"></i>
+      </div>
+      <div>
+        <p class="title-p">ევექსის ჰოსპიტალები</p>
+        <p class="desc-p">ოთარ ლორთქიფანიძის #31</p>
+      </div>
     </div>
-    <app-input name="group1" [applyClass]="true">ოთარ ლორთქიფანიძის #31</app-input>
+
+    <app-input name="group1" [applyClass]="true"></app-input>
   </div>
 </div>
