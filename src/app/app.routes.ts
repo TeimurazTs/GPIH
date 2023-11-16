@@ -5,6 +5,7 @@ import { ChooseDocComponent } from './components/choose-doc/choose-doc.component
 import { ChooseClinicComponent } from './choose-clinic/choose-clinic.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { SumupComponent } from './components/sumup/sumup.component';
+import { BookedComponent } from './component/booked/booked.component';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path: 'sumup',
     component: SumupComponent,
+  },
+  {
+    path: 'booked',
+    component: BookedComponent,
   },
 ];

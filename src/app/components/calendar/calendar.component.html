@@ -20,12 +20,7 @@
   <div class="doctors">
     <fieldset class="fieldset-flex clinic">
       <legend>კლინიკა</legend>
-      <input class="input-none" type="text" />
-      <select class="small">
-        <option value=""></option>
-        <option value="სს კურაციო">სს კურაციო</option>
-        <option value="სს კურაციო">ინგოროყვას კლინიკა</option>
-      </select>
+      <input [disabled]="disabledInput" class="input-none" [value]="defaultByUser" type="text" />
     </fieldset>
     <fieldset class="fieldset-flex">
       <legend>პირადი ექიმი</legend>
@@ -62,8 +57,8 @@
 
   <div class="doctor-box margin-top">
     <div class="photo-clinic">
-      <!-- <img style="width: 42px; height: 42px"
-        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /> -->
+      <img style="width: 42px; height: 42px"
+        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
       <div>
         <div class="doctor-info">
           <p class="doctor-name">{{ doctor.name }}</p>

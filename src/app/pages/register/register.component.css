@@ -20,7 +20,7 @@
   bottom: -100px;
   right: 25%;
   padding: 5px 15px;
-  background-color: rgb(255, 0, 195);
+  background-color: #da387b
 }
 
 ::ng-deep .class-right .mdc-button__label {

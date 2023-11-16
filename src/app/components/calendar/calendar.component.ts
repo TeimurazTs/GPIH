@@ -21,6 +21,8 @@ export class CalendarComponent implements OnInit {
   currentDate = new Date();
   weekDates: Date[] = [];
 
+  defaultByUser!: string;
+
   inputData(data: any) {
     this.specialtyFormcontrol.setValue(data.value);
   }
@@ -34,35 +36,44 @@ export class CalendarComponent implements OnInit {
   constructor(private forms: FormsService) {
     this.loadWeek(this.currentDate);
   }
+
+  disabledInput = false;
+
   ngOnInit(): void {
+    this.defaultByUser = this.forms.clinicFormGroup
+      .get('clinic')
+      ?.value.split(';')[0];
+    this.disabledInput = true;
     this.doctorFormGroup = this.forms.myDoctorFormGroup;
     this.doctorFormControl = this.doctorFormGroup.get('doctor') as FormControl;
     this.specialtyFormcontrol = this.doctorFormGroup.get(
       'specialty'
     ) as FormControl;
     this.timeFormControl = this.doctorFormGroup.get('time') as FormControl;
-    this.personalDoctorFormControl=this.doctorFormGroup.get('personalDoctor') as FormControl;
+    this.personalDoctorFormControl = this.doctorFormGroup.get(
+      'personalDoctor'
+    ) as FormControl;
     this.doctorFormControl.valueChanges.subscribe((data) => {
       console.log(data);
-      this.doctors=[]
-     
+      this.doctors = [];
+
       if (data === 'ლანა ხორგუანი') {
         this.doctors[0] = this.doctorsData[0];
-      } else if(data ==='გიორგი კალანდაძე'){
+      } else if (data === 'გიორგი კალანდაძე') {
         this.doctors[0] = this.doctorsData[1];
-      }else if(data ==='იაგო აბზიანიძე'){
+      } else if (data === 'იაგო აბზიანიძე') {
         this.doctors[0] = this.doctorsData[2];
-      }else if(data ==='ნინო აბუთიძე'){
+      } else if (data === 'ნინო აბუთიძე') {
         this.doctors[0] = this.doctorsData[3];
       }
     });
     this.specialtyFormcontrol.valueChanges.subscribe((data) => {
       console.log(data);
-    
+
       if (data === 'ოტორინოლარინგოლოგი') {
-        this.doctors= this.otolaringologs
-      } else if(data ==='ოფთალმოლოგი'){
-        this.doctors = this.oftalmologs
+        this.doctors = this.otolaringologs;
+      } else if (data === 'ოფთალმოლოგი') {
+        this.doctors = this.oftalmologs;
       }
     });
     this.timeFormControl.valueChanges.subscribe((data) => {
@@ -71,10 +82,10 @@ export class CalendarComponent implements OnInit {
     this.personalDoctorFormControl.valueChanges.subscribe((data) => {
       console.log(data);
 
-      this.doctors=[]
+      this.doctors = [];
       if (data === 'მარიამ ქრისტესაშვილი') {
         this.doctors[0] = this.personalDoctors[0];
-      } else if(data ==='გიორგი თვალაძე'){
+      } else if (data === 'გიორგი თვალაძე') {
         this.doctors[0] = this.personalDoctors[1];
       }
     });
@@ -126,8 +137,8 @@ export class CalendarComponent implements OnInit {
     element.style.backgroundColor = 'rgb(255, 0, 195)';
   }
 
-  doctors: any[]=[];
-  personalDoctors: any[]=[
+  doctors: any[] = [];
+  personalDoctors: any[] = [
     {
       name: 'მარიამ ქრისტესაშვილი',
       clinic: 'კურაციო',
@@ -163,9 +174,9 @@ export class CalendarComponent implements OnInit {
         '16:20-16:40',
         '16:40-17:00',
       ],
-    }
-  ]
-  otolaringologs:any[]=[
+    },
+  ];
+  otolaringologs: any[] = [
     {
       name: 'ლანა ხორგუანი',
       clinic: 'კურაციო',
@@ -203,9 +214,9 @@ export class CalendarComponent implements OnInit {
         '16:20-16:40',
         '16:40-17:00',
       ],
-    }
-  ]
-  oftalmologs:any[]=[
+    },
+  ];
+  oftalmologs: any[] = [
     {
       name: 'იაგო აბზიანიძე',
       clinic: 'ინგოროყვა',
@@ -243,8 +254,8 @@ export class CalendarComponent implements OnInit {
         '16:20-16:40',
         '16:40-17:00',
       ],
-    }
-  ]
+    },
+  ];
 
   doctorsData: any[] = [
     {

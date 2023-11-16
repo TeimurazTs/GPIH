@@ -30,8 +30,8 @@
   background-color: white;
 }
 .week-days div.active {
-  border: 2px solid rgb(191, 35, 61);
-  color: rgb(191, 35, 61);
+  border: 2px solid #da387b;
+  color: #da387b;
   opacity: 1;
 }
 
@@ -154,7 +154,7 @@ fieldset legend {
   gap: 20px;
 }
 .clinic-title {
-  color: #e92357;
+  color: #da387b;
 }
 .photo-clinic img {
   border-radius: 50%;

@@ -1,4 +1,39 @@
-<div>
-    <p>ექიმი</p>
-    
+<div class="container-book">
+    <p class="book-p">გადაამოწმე ჯავშანი</p>
+    <p class="sum-up-title">ექიმი</p>
+    <div>
+        <p>{{ doctorName }}</p>
+        <p>{{ specialty }}</p>
+    </div>
+    <p class="sum-up-title">კლინიკა</p>
+    <p>{{clinic }}</p>
+    <div class="visit">
+        <div class="calendar-wrapper">
+            <i class="fa fa-calendar" aria-hidden="true" style="font-size: 40px; color: #da387b;"></i>
+        </div>
+        <div class="visit-time-frames">
+            <p class="visit-titles">ვიზიტის დრო</p>
+            <div class="visit-time-and-date">
+                <p>{{ availabilityTime }}</p>
+                <p>{{ currentDate | date : 'd MMM' }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashed-line"></div>
+    <p class="sum-up-title">დაზღვეული</p>
+    <p>ჟანა გიორგაშვილი OPPMED 502938/20</p>
+
+    <p class="sum-up-title">ტელეფონის ნომერი</p>
+    <p>551 87 78 76</p>
+
+    <p class="sum-up-title">ელ.ფოსტა</p>
+    <p>{{'Jana.giorgashvili@gmail.com'}}</p>
+
+    <div class="info-wrapper">
+        <div class="info-symbol-wrapper">
+            <i class="info-symbol">i</i>
+        </div>
+        <div class="info"> გაითვალისწინე, მითითებულ ნომერზე და ელ.ფოსტაზე გამოგეგზავნება ჯავშნის მონაცემები</div>
+    </div>
 </div>
