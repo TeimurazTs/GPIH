@@ -1,8 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +17,10 @@ export class FormsService {
   }
   get myDoctorFormGroup(): FormGroup {
     return this.doctorFormGroup;
+  }
+
+  get myClientFormGroup(): FormGroup {
+    return this.clientFormGroup;
   }
 
   constructor() {

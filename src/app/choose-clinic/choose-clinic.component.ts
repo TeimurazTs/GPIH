@@ -18,8 +18,5 @@ export class ChooseClinicComponent implements OnInit {
   constructor(private forms: FormsService) {}
   ngOnInit(): void {
     this.clinicFormControl = this.clinicFormGroup.get('clinic') as FormControl;
-    this.clinicFormControl.valueChanges.subscribe((data) => {
-      console.log(data)
-    })
   }
 }

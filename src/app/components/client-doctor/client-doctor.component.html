@@ -20,7 +20,7 @@
     <p class="choose-bold">აირჩიე ვისი ჩაწერა გსურს</p>
     <app-input value="გიორგი წერეთლი" label2="OPPMED123512321" label="გიორგი წერეთელი" name="group2"
       [formControlInput]="userFormControl"></app-input>
-    <app-input label2="OPPMED123512321" label="გიორგი ახვლედიანი" name="group2"></app-input>
+    <app-input label2="OPPMED123512321" [formControlInput]="userFormControl" value="გიორგი ახვლედიანი" label="გიორგი ახვლედიანი" name="group2"></app-input>
     } @if(toggleForSomeone) {
     <form>
       <p class="title">მიუთითე დაზღვეულის მონაცემები</p>
@@ -33,9 +33,9 @@
         <input class="fieldset-input" type="text" />
       </fieldset>
       <p class="title">აირჩიე ვისი ჩაწერა გსურს</p>
-      <app-input label2="OPPMED123512321" label="გიორგი ლომიძე" name="group3"></app-input>
-      <app-input label2="OPPMED123512321" label="გიორგი ბერაძე" name="group3"></app-input>
-      <app-input label2="OPPMED123512321" label="გიორგი კალანდაძე" name="group3"></app-input>
+      <app-input [formControlInput]="userFormControl" value="გიორგი ლომიძე" label2="OPPMED123512321" label="გიორგი ლომიძე" name="group3"></app-input>
+      <app-input [formControlInput]="userFormControl" value="გიორგი ბერაძე" label2="OPPMED123512321" label="გიორგი ბერაძე" name="group3"></app-input>
+      <app-input [formControlInput]="userFormControl" value="ჯორჯ კლუნი" label2="OPPMED123512321" label="ჯორჯ კლუნი" name="group3"></app-input>
     </form>
     }
   </form>
