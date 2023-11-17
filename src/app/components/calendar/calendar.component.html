@@ -1,11 +1,11 @@
 <form [formGroup]="doctorFormGroup" class="container">
   <p class="calendar-text">აირჩიე სასურველი დრო</p>
   <div class="container-form-day">
-    <p class="calendar-day-month">
-      {{ todayWithMonth }}
+    <p style="cursor: pointer;" (click)="goBack()" class="calendar-day-month">
+      დღეს - {{ todayWithMonth | date : "d MMM" }}
     </p>
     <div class="container-with-arrows">
-      <button class="btn" (click)="onPrevious()" [disabled]="weekDates[0] < currentDate">
+      <button class="btn" (click)="onPrevious()" [disabled]="weekDates[0] <= currentDate">
         &#60;
       </button>
       <div class="week-days">
@@ -24,8 +24,8 @@
     </fieldset>
     <fieldset class="fieldset-flex">
       <legend>პირადი ექიმი</legend>
-      <input class="input-none" type="text" [formControl]="personalDoctorFormControl"/>
-      <select class="small" #selectData3 (change)="inputData3(selectData3)" >
+      <input class="input-none" type="text" [formControl]="personalDoctorFormControl" />
+      <select class="small" #selectData3 (change)="inputData3(selectData3)">
         <option value=""></option>
         <option value="მარიამ ქრისტესაშვილი">მარიამ ქრისტესაშვილი</option>
         <option value="გიორგი თვალაძე">გიორგი თვალაძე</option>
@@ -49,10 +49,38 @@
         <option value="გიორგი კალანდაძე">გიორგი კალანდაძე</option>
         <option value="იაგო აბზიანიძე">იაგო აბზიანიძე</option>
         <option value="ნინო აბუთიძე">ნინო აბუთიძე</option>
+        <option value="ყველა">ყველა ექიმი</option>
       </select>
     </fieldset>
   </div>
   <p class="margin-top">სპეციალისტები</p>
+  @if(showAllDoctors) {
+  @for (doctors of allDoctors; track $index) {
+  <div class="eachBox">
+    @for (doctor of doctors; track doctor.id) {
+
+    <div class="doctor-box margin-top">
+      <div class="photo-clinic">
+        <img style="width: 42px; height: 42px"
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        <div>
+          <div class="doctor-info">
+            <p class="doctor-name">{{ doctor.name }}</p>
+            <p class="clinic-title">{{ doctor.clinic }}</p>
+          </div>
+          <p class="doctor-desc">{{ doctor.description }}</p>
+        </div>
+      </div>
+      <div class="time-div">
+        @for(each of doctor.time; track each) {
+        <p #paragraph (click)="clickedOnTime(each, paragraph)" class="each-time">{{ each }}</p>
+        }
+      </div>
+    </div>
+    }
+  </div>
+  }
+  }
   @for (doctor of doctors; track doctor.id) {
 
   <div class="doctor-box margin-top">

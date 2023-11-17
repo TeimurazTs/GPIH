@@ -172,6 +172,19 @@ fieldset legend {
   padding: 2px 5px;
   margin: 0;
 }
+
+.eachBox {
+  border: 1px solid black;
+  margin-top: 15px;
+  overflow-y: hidden;
+  height: 300px;
+  padding: 20px;
+  border-radius: 11px;
+
+  position: relative;
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 768px) {
   .container-form-day, .doctors{
     justify-content: center;
