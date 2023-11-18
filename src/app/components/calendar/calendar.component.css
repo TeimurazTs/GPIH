@@ -180,14 +180,41 @@ fieldset legend {
   height: 300px;
   padding: 20px;
   border-radius: 11px;
+  padding-bottom: 5%;
 
   position: relative;
   overflow: hidden;
 }
 
+.see-all {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: aliceblue;
+  border-top: 1px solid gray;
+  z-index: 1;
+  
+}
+
+.see-all-btn {
+  border: none;
+  background: none;
+  color: #da387b;
+}
+
+.apply-height{
+  height: auto;
+}
+
 @media only screen and (max-width: 768px) {
-  .container-form-day, .doctors{
+  .container-form-day,
+  .doctors {
     justify-content: center;
   }
-
 }

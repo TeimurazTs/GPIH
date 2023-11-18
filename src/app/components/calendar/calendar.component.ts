@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsService } from '../../services/forms.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -160,6 +160,11 @@ export class CalendarComponent implements OnInit {
     element.style.backgroundColor = 'rgb(255, 0, 195)';
   }
 
+  toggleVisibility(el : any){
+    const element = el;
+    element.classList.toggle('apply-height');
+    
+  }
   doctors: any[] = [];
   personalDoctors: any[] = [
     {
